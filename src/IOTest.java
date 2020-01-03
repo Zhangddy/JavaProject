@@ -12,8 +12,7 @@ public class IOTest {
             }
             fileReader.close();
             fileWriter.close();
-        }
-        catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();

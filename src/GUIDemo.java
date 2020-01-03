@@ -7,11 +7,12 @@ import java.awt.*;
 public class GUIDemo {
     public static void main(String[] args) {
         JFrame f = new JFrame("用户注册界面");
-        f.setLayout(new GridLayout(6, 1, 10, 10));
+
         f.setSize(300, 400);
         f.setLocation(300, 400);
 
-        JPanel[] panels = new JPanel[5];
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(6, 2));
         JLabel[] labels = new JLabel[5];
         labels[0] = new JLabel("用户名");
         labels[1] = new JLabel("密码");
@@ -22,14 +23,13 @@ public class GUIDemo {
         
         for (int i = 0; i < 5; i++) {
             inputField[i] = new JTextField(20);
-            panels[i] = new JPanel();
-            panels[i].add(labels[i]);
-            panels[i].add(inputField[i]);
-            f.add(panels[i]);
+            panel.add(labels[i]);
+            panel.add(inputField[i]);
         }
         // 放最后一个确认按钮
         JButton jButton = new JButton("提交");
-        f.add(jButton);
+        panel.add(jButton);
+        f.add(panel);
         f.setVisible(true);
     }
 
